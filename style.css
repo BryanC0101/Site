@@ -13,20 +13,21 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+/* Aqui o background-space funciona apenas como plano para os objetos animados */
 .background-space {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -1; /* coloca o background antes da tela de login */
     overflow: hidden;
-    pointer-events: none;
+    pointer-events: none; /* não permite interação com os objetos de fundo */
 }
 
 .object {
     position: absolute;
-    width: 100px;
+    width: 200px;
     animation: fly linear forwards;
 }
 

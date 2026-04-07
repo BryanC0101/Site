@@ -20,7 +20,7 @@ function createObject() {
 
     background.appendChild(obj);
 
-    //remover depois da animação
+    //remove depois da animação
     setTimeout(() => {
         obj.remove();
     }, duration * 1000);

@@ -3,11 +3,12 @@
 
 
 
-from flask import Flask 
+from flask import Flask
+from db import db
 
 # app vai ser o representante do Flask no código
 app = Flask(__name__)
-
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
 
 # aqui se estabelece a rota principal, ou seha, a home.
 # o "index" é uma função de resposta da rota, que retornará a mensagem "Olá, Mundo!".
