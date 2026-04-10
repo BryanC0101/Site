@@ -9,7 +9,7 @@
 <body>
     <div class="background-space"></div>
     <div class="container">
-        <img id="imgRocket" src="static/images/rocket.gif" alt="">
+        <img id="imgRocket" src="{{ url_for('static', filename='images/rocket.gif') }}" alt="">
         <h1>Welcome to our website</h1>
         <h1>Register to enter</h1>
         <form id="register" action="/registrar" method="post">
@@ -17,8 +17,11 @@
         <input class="inputToInput" name="senhaForm" placeholder="Password" type="password"><br>
             <input id="buttonInput" type="submit" value="Register">
         </form>
+        <form action="{{url_for('login')}}" method="GET">
+            <button id="LoginInButton" type='submit'>Login in</button>
+        </form>
     </div>
 
-    <script src="static/script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

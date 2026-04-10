@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/home.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
     <title>Home</title>
 </head>
 <body>
-    <div class="nav-bar">
-        <img id="logo" src="static/images/rocket.gif" alt="">
-        <div class="inputs">
-        <input id="inputFinder" type="text" placeholder="Find your next rocket ">
-        <input id="buttonFinder" type="button" value="Search">
+    <div class="container-nav-bar">
+        <div class="nav-bar">
+            <img id="logo" src="{{ url_for('static', filename='images/rocket.gif') }}" alt="">
+            <h1 class="nav-bar-content">About</h1>
+            <h1 class="nav-bar-content">Services</h1>
+            <h1 class="nav-bar-content">Contact</h1>
         </div>
-        <div class="lightAndLogout">
-            <h1>Logout</h1>
-            <div id="turnLightOver"><img src="static/images/moon.svg" alt=""></div>
+        <div class="logoutnAndLight">
+                <form action="{{url_for('logout')}}" method="GET">
+                        <button id="logoutButton" type='submit'>Logout</button>
+                </form>
+                <div class="lightAndLogout">
+                    <div id="turnLightOver"><img src="static/images/moon.svg" alt=""></div>
+                </div>
         </div>
+        
     </div>
-    <h1>Olá, {{current_user.nome}}</h1>
-    <div class="container-products">
-        <ul id="products">
-            <li class="list-product"></li>
-            <li class="list-product"></li>
-            <li class="list-product"></li>
-            <li class="list-product"></li>
-        </ul>
+    
+    <h1 id="user-title">Hello, {{current_user.nome}}!</h1>
+
     </div>
     
 </body>

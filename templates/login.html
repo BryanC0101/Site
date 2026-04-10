@@ -9,13 +9,15 @@
 <body>
     <div class="background-space"></div>
     <div class="container">
-        <img id="imgRocket" src="static/images/rocket.gif" alt="">
+        <img id="imgRocket" src="{{ url_for('static', filename='images/rocket.gif') }}" alt="">
         <h1>Welcome again!</h1>
-        <form id="register" action="/registrar" method="post">
-        <input class="inputToInput" name="nome" placeholder="Username" type="text"><br>
-        <input class="inputToInput" name="senha" placeholder="Password" type="password"><br>
-        <a id="ForgotPassword" href="">Forgot your password?</a>
+        <form id="login" action="/login" method="post">
+        <input class="inputToInput" name="nomeForm" placeholder="Username" type="text"><br>
+        <input class="inputToInput" name="senhaForm" placeholder="Password" type="password"><br>
             <input id="buttonInput" type="submit" value="Login">
+        </form>
+        <form action="{{url_for('registrar')}}" method="GET">
+            <button id="SignUpButton" type='submit'>Sign Up</button>
         </form>
     </div>
     <script src="static/script.js"></script>

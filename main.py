@@ -60,7 +60,7 @@ def registrar():
         nome = request.form['nomeForm']
         senha = request.form['senhaForm']
 
-        novo_usuario = Usuario(nome=nome, senha=senha)
+        novo_usuario = Usuario(nome=nome, senha=hash(senha))
         db.session.add(novo_usuario)
         db.session.commit()
 
